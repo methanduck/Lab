@@ -11,8 +11,11 @@
     "name": "simple",
     "description" : "This is an example benchmark for caliper, to test the backend DLT's performance with simple account opening & querying transactions",
     "clients": {
-      "type": "local",
-      "number": 5
+      "type": "zookeeper",
+      "zoo": {
+        "server": "192.168.0.7:2181",
+        "clientsPerHost": 5
+      }
     },
     "rounds": [
       {
