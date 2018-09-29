@@ -20,4 +20,6 @@ if test -n "$containers"
     else
     echo "########COMPLETE########"
     fi
+    else
+    echo "!!!!!!!!NO CONTAINER!!!!!!!!"
 fi
