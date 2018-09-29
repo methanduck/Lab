@@ -1,11 +1,11 @@
 #!/bin/bash
-if [$(id -u) -ne 0]
+if [$(id -u) -ne 0];
 then
     echo "!!!!!!!!PLEASE RUN AS ROOT!!!!!!!!"
 else
     echo "########RUNNING CONTAINERS########"
         containers=$(docker ps -aq)
-        if test -n "$containers"
+        if test -n "$containers";
             then
             echo ${containers}
             echo "########STOPPING########"
