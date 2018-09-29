@@ -1,16 +1,17 @@
 #!/bin/bash
 echo "########RUNNING CONTAINERS########"
 containers=$(sudo docker ps -aq)
+echo ${containers}
 echo "########STOPPING########"
 sudo docker stop ${containers}
-
 containers=$(sudo docker ps -aq)
-if [$containers];
+#if it dosen't completely shutted down
+if [-n containers];
 then
 echo "########CONTAINER REMOVE INIT########"
 sudo docker container rm ${containers}
 containers=$(sudo docker ps -aq)
-    if [!$containers];
+    if [-z containers];
     then
     echo "########COMPLETE########"
     fi
