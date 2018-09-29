@@ -1,7 +1,8 @@
 #!/bin/bash
-if [$(id -u) -ne 0];
+if [ "$(id -u)" -ne 0 ]
 then
-    echo "!!!!!!!!PLEASE RUN AS ROOT!!!!!!!!"
+    echo "!!!!!!!!PLEASE RUN AS ROOT(sudo)!!!!!!!!"
+    exit
 else
     echo "########RUNNING CONTAINERS########"
         containers=$(docker ps -aq)
