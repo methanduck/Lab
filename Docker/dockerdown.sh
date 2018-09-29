@@ -6,12 +6,12 @@ echo "########STOPPING########"
 sudo docker stop ${containers}
 containers=$(sudo docker ps -aq)
 #if it dosen't completely shutted down
-if [-n containers];
+if test -n "$containers";
 then
 echo "########CONTAINER REMOVE INIT########"
 sudo docker container rm ${containers}
 containers=$(sudo docker ps -aq)
-    if [-z containers];
+    if test -z "$containers";
     then
     echo "########COMPLETE########"
     fi
