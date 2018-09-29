@@ -1,4 +1,19 @@
 #!/bin/bash
 echo "########RUNNING CONTAINERS########"
-sudo docker stop $(sudo docker ps -aq)
-sudo docker container rm $(sudo docker ps -aq)
+containers=$(sudo docker ps -aq)
+echo "########STOPPING########"
+sudo docker stop ${containers}
+
+containers=$(sudo docker ps -aq)
+if [$containers];
+then
+echo "########CONTAINER REMOVE INIT########"
+sudo docker container rm ${containers}
+containers=$(sudo docker ps -aq)
+    if [!$containers];
+    then
+    echo "########COMPLETE########"
+    fi
+else
+echo "########COMPLETE########"
+fi
