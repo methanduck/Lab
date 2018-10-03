@@ -1,4 +1,4 @@
-package Chaincode
+package main
 
 import (
 	"fmt"
@@ -75,36 +75,44 @@ func (t *ManyArg) invoke(stub shim.ChaincodeStubInterface, args []string) peer.R
 		return shim.Error("NEED 3 ARG FUNC: INVOKE")
 		//0 : entity 1 : Value 2 : delimiter
 	}
-
-	var Val1, Val2 int = 0, 0
 	var err error
-	var delimiter string = args[2]
-	Val1Byte, err := stub.GetState(args[0])
-	if err != nil {
-		return shim.Error("FAILED TO GET STATE FUNC: INVOKE")
-	}
-	if Val1Byte == nil {
-		return shim.Error("ENTITY NOT FOUND FUNC: INVOKE")
-	}
-	Val1, _ = strconv.Atoi(string(Val1Byte))
-	Val2, _ = strconv.Atoi(args[1])
+	if args[2] == "add" {
+		err = stub.PutState(args[0], []byte(args[1]))
+		if err != nil {
+			shim.Error(fmt.Sprintln("ERR WHILE PUTSTATE %s",err.Error()))
+		}
+	} else {
+		var Val1, Val2 int = 0, 0
+		var delimiter string = args[2]
+		Val1Byte, err := stub.GetState(args[0])
+		if err != nil {
+			return shim.Error("FAILED TO GET STATE FUNC: INVOKE")
+		}
+		if Val1Byte == nil {
+			return shim.Error("ENTITY NOT FOUND FUNC: INVOKE")
+		}
+		Val1, _ = strconv.Atoi(string(Val1Byte))
+		Val2, _ = strconv.Atoi(args[1])
 
-	switch delimiter {
-	case "+":
-		Val1 += Val2
-	case "-":
-		Val1 -= Val2
-	case "*":
-		Val1 *= Val2
-	case "/":
-		Val1 /= Val2
+		switch delimiter {
+		case "+":
+			Val1 += Val2
+		case "-":
+			Val1 -= Val2
+		case "*":
+			Val1 *= Val2
+		case "/":
+			Val1 /= Val2
 
+		}
+
+		err = stub.PutState(args[0], []byte(strconv.Itoa(Val1)))
+		if err != nil {
+			return shim.Error(fmt.Sprintln("ERR WHILE PUTSTATE %s",err.Error()))
+		}
 	}
 
-	err = stub.PutState(args[0], []byte(strconv.Itoa(Val1)))
-	if err != nil {
-		return shim.Error(err.Error())
-	}
+
 
 	return shim.Success(nil)
 }
@@ -137,18 +145,21 @@ func (t *ManyArg) query(stub shim.ChaincodeStubInterface, args []string) peer.Re
 
 	jsonResp := "{\"Name\":\"" + args[0] + "\",\"Amount\":\"" + string(ValueByte) + "\"}"
 	fmt.Printf("Query Response:%s\n", jsonResp)
-	return shim.Success(ValueByte)
+	return shim.Success(nil)
 
 }
 func (t *ManyArg)set(stub shim.ChaincodeStubInterface, args []string) peer.Response {
 	var err error
-
-	t.query(stub,[]string(args[0]))
-	err = stub.PutState(args[0],[]byte(args[1]))
-	if err != nil {
-		return shim.Error(err.Error())
+	var res peer.Response
+	res = t.query(stub,[]string{args[0]})
+	if res.Status == shim.OK {
+		err = stub.PutState(args[0],[]byte(args[1]))
+		if err != nil {
+			return shim.Error("ERR WHILE PUTSTATE FUNC: SET, STATUS OK")
+		}
+	}else {
+		return shim.Error("ERR WHILE QUERY FUNC: SET, STATUS != OK")
 	}
-
 	return shim.Success(nil)
 }
 
