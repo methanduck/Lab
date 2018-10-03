@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81819185-fbdb-4b63-bc41-c0bc4aa2eb44" name="Default Changelist" comment="complete">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mkchaincode.go" beforeDir="false" afterPath="$PROJECT_DIR$/mkchaincode.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,12 +52,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="go" value="1243" />
+          <entry key="go" value="1272" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Go" value="1243" />
+          <entry key="Go" value="1272" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -167,8 +166,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mkchaincode.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+            <state relative-caret-position="233">
+              <caret line="44" column="42" selection-start-line="44" selection-start-column="42" selection-end-line="44" selection-end-column="42" />
+              <folding>
+                <element signature="n#!!block;n#Invoke#0" />
+                <element signature="n#!!block;n#invoke#0" />
+                <element signature="n#!!block;n#delete#0" />
+                <element signature="n#!!block;n#set#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -224,8 +229,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="118" />
-    <option name="y" value="230" />
+    <option name="x" value="365" />
+    <option name="y" value="107" />
     <option name="width" value="1463" />
     <option name="height" value="989" />
   </component>
@@ -278,7 +283,7 @@
     </option>
   </component>
   <component name="ToolWindowManager">
-    <frame x="503" y="97" width="1463" height="989" extended-state="0" />
+    <frame x="365" y="107" width="1463" height="989" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.091233075" />
@@ -342,8 +347,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mkchaincode.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+        <state relative-caret-position="233">
+          <caret line="44" column="42" selection-start-line="44" selection-start-column="42" selection-end-line="44" selection-end-column="42" />
+          <folding>
+            <element signature="n#!!block;n#Invoke#0" />
+            <element signature="n#!!block;n#invoke#0" />
+            <element signature="n#!!block;n#delete#0" />
+            <element signature="n#!!block;n#set#0" />
+          </folding>
         </state>
       </provider>
     </entry>

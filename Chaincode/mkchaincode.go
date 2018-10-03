@@ -24,10 +24,10 @@ func (t *ManyArg) Init(stub shim.ChaincodeStubInterface) peer.Response {
 	var err error
 	var atoi_res int = 0
 	var entCount,valCount int =0, 1
-
+	fmt.Println(len(args))
 	//init
 	if len(args) == 2 {
-		fmt.Sprintln("FIRST IF : INIT")
+		fmt.Println("FIRST IF : INIT")
 		atoi_res, err = strconv.Atoi(args[1])
 		if err != nil {
 			return shim.Error("!!!!!!!!DATA IS NOT INTEGER!!!!!!!!")
@@ -38,21 +38,20 @@ func (t *ManyArg) Init(stub shim.ChaincodeStubInterface) peer.Response {
 			return shim.Error(err.Error())
 		}
 	}else {
-		fmt.Sprintln("SECOND IF")
-		for tmp := 0; tmp == (len(args)/2 )-1; tmp ++ {
+		fmt.Println("SECOND IF")
+		for tmp := 0; tmp <= (len(args)/2 )-1; tmp ++ {
 			atoi_res, err = strconv.Atoi(args[valCount]) //value
 			if err != nil {
 				return shim.Error("!!!!!!!!Data is not integer!!!!!!!!")
-			} else {
+			}
 				err = stub.PutState(args[entCount],[]byte(strconv.Itoa(atoi_res)))//entity, value
 				if err != nil {
-					fmt.Sprintln("ERR FUNC : INIT")
+					fmt.Println("ERR FUNC : INIT")
 					return shim.Error("PutState ERR FUNC : INIT")
 				}
-				fmt.Sprintln(args[entCount],strconv.Itoa(atoi_res))
+				fmt.Println(args[entCount],strconv.Itoa(atoi_res))
 				entCount+=2;
 				valCount+=2;
-			}
 		}
 	}
 
@@ -148,7 +147,7 @@ func (t *ManyArg) query(stub shim.ChaincodeStubInterface, args []string) peer.Re
 
 	jsonResp := "{\"Name\":\"" + args[0] + "\",\"Amount\":\"" + string(ValueByte) + "\"}"
 	fmt.Printf("Query Response:%s\n", jsonResp)
-	return shim.Success(nil)
+	return shim.Success(ValueByte)
 
 }
 func (t *ManyArg)set(stub shim.ChaincodeStubInterface, args []string) peer.Response {
