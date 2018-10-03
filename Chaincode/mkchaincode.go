@@ -63,6 +63,8 @@ func (t *ManyArg) Invoke(stub shim.ChaincodeStubInterface) peer.Response {
 		return t.delete(stub, args)
 	case "query":
 		return t.query(stub, args)
+	case "set":
+		return t.set(stub, args)
 	default:
 		return shim.Error("INVOKE OPTION NOT FOUND")
 	}
@@ -96,6 +98,7 @@ func (t *ManyArg) invoke(stub shim.ChaincodeStubInterface, args []string) peer.R
 		Val1 *= Val2
 	case "/":
 		Val1 /= Val2
+
 	}
 
 	err = stub.PutState(args[0], []byte(strconv.Itoa(Val1)))
@@ -137,6 +140,18 @@ func (t *ManyArg) query(stub shim.ChaincodeStubInterface, args []string) peer.Re
 	return shim.Success(ValueByte)
 
 }
+func (t *ManyArg)set(stub shim.ChaincodeStubInterface, args []string) peer.Response {
+	var err error
+
+	t.query(stub,[]string(args[0]))
+	err = stub.PutState(args[0],[]byte(args[1]))
+	if err != nil {
+		return shim.Error(err.Error())
+	}
+
+	return shim.Success(nil)
+}
+
 func main() {
 	err := new(ManyArg)
 	if err !=nil {
