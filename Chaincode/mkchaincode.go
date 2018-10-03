@@ -164,7 +164,7 @@ func (t *ManyArg)set(stub shim.ChaincodeStubInterface, args []string) peer.Respo
 }
 
 func main() {
-	err := new(ManyArg)
+	err := shim.Start(new(ManyArg))
 	if err !=nil {
 		fmt.Println("Error starting with Chaincode FUNC: MAIN")
 	}
