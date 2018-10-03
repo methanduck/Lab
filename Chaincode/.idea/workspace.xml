@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="81819185-fbdb-4b63-bc41-c0bc4aa2eb44" name="Default Changelist" comment="complete">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mkchaincode.go" beforeDir="false" afterPath="$PROJECT_DIR$/mkchaincode.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -110,14 +111,33 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="1037720242">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="go" value="119" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Go" value="119" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mkchaincode.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="593">
+              <caret line="118" column="5" lean-forward="true" selection-start-line="118" selection-start-column="5" selection-end-line="118" selection-end-column="5" />
               <folding>
                 <element signature="e#19#145#0" expanded="true" />
               </folding>
@@ -128,29 +148,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://C:/Go/src/builtin/builtin.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="694">
-              <caret line="253" column="77" lean-forward="true" selection-start-line="253" selection-start-column="77" selection-end-line="253" selection-end-column="77" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../GoDep/src/github.com/hyperledger/fabric/protos/peer/proposal_response.pb.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="81" column="5" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../GoDep/src/github.com/hyperledger/fabric/core/chaincode/shim/response.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="723">
-              <caret line="42" column="23" lean-forward="true" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
-              <folding>
-                <element signature="e#590#648#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="4807">
+              <caret line="253" column="77" selection-start-line="253" selection-start-column="77" selection-end-line="253" selection-end-column="77" />
             </state>
           </provider>
         </entry>
@@ -188,9 +187,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="width" value="973" />
-    <option name="height" value="1047" />
+    <option name="x" value="277" />
+    <option name="y" value="15" />
+    <option name="width" value="1463" />
+    <option name="height" value="989" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -198,7 +198,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -214,6 +213,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -241,13 +241,12 @@
     </option>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="973" height="1047" extended-state="0" />
+    <frame x="277" y="15" width="1463" height="989" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13253012" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.08766928" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.32968238" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.2576923" />
@@ -256,9 +255,10 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32948717" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" weight="0.32948717" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32971507" />
+      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.32968238" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -280,38 +280,23 @@
     <entry file="file://$PROJECT_DIR$/../github.com/hyperledger/fabric/protos/peer/proposal_response.pb.go" />
     <entry file="file://$PROJECT_DIR$/../github.com/hyperledger/fabric/protos/peer/chaincode_shim.proto" />
     <entry file="file://$PROJECT_DIR$/../github.com/hyperledger/fabric/protos/peer/chaincode_shim.pb.go" />
-    <entry file="file://$PROJECT_DIR$/../../go/src/github.com/hyperledger/fabric/core/chaincode/shim/interfaces.go" />
-    <entry file="file://$PROJECT_DIR$/../../GoDep/src/github.com/hyperledger/fabric/core/chaincode/shim/response.go">
+    <entry file="file://$PROJECT_DIR$/../../GO/src/github.com/hyperledger/fabric/core/chaincode/shim/interfaces.go" />
+    <entry file="file://$PROJECT_DIR$/../../GoDep/src/github.com/hyperledger/fabric/core/chaincode/shim/response.go" />
+    <entry file="file://$PROJECT_DIR$/../../GoDep/src/github.com/hyperledger/fabric/protos/peer/proposal_response.pb.go" />
+    <entry file="file://$PROJECT_DIR$/mkchaincode.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="723">
-          <caret line="42" column="23" lean-forward="true" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+        <state relative-caret-position="593">
+          <caret line="118" column="5" lean-forward="true" selection-start-line="118" selection-start-column="5" selection-end-line="118" selection-end-column="5" />
           <folding>
-            <element signature="e#590#648#0" expanded="true" />
+            <element signature="e#19#145#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../GoDep/src/github.com/hyperledger/fabric/protos/peer/proposal_response.pb.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="81" column="5" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://C:/Go/src/builtin/builtin.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="694">
-          <caret line="253" column="77" lean-forward="true" selection-start-line="253" selection-start-column="77" selection-end-line="253" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mkchaincode.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#19#145#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="4807">
+          <caret line="253" column="77" selection-start-line="253" selection-start-column="77" selection-end-line="253" selection-end-column="77" />
         </state>
       </provider>
     </entry>

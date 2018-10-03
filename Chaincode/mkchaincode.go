@@ -128,3 +128,9 @@ func (t *ManyArg) query(stub shim.ChaincodeStubInterface, args []string) peer.Re
 	return shim.Success(ValueByte)
 
 }
+func main() {
+	err := new(ManyArg)
+	if err !=nil {
+		fmt.Println("Error starting with Chaincode FUNC: MAIN")
+	}
+}
