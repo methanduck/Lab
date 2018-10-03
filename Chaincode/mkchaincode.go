@@ -44,8 +44,10 @@ func (t *ManyArg) Init(stub shim.ChaincodeStubInterface) peer.Response {
 			} else {
 				err = stub.PutState(args[entCount],[]byte(strconv.Itoa(atoi_res)))//entity, value
 				if err != nil {
+					fmt.Sprintln("ERR FUNC : INIT")
 					return shim.Error("PutState ERR FUNC : INIT")
 				}
+				fmt.Sprintln(args[entCount],strconv.Itoa(atoi_res))
 				entCount+=2;
 				valCount+=2;
 			}
@@ -113,9 +115,6 @@ func (t *ManyArg) invoke(stub shim.ChaincodeStubInterface, args []string) peer.R
 			return shim.Error(fmt.Sprintln("ERR WHILE PUTSTATE %s",err.Error()))
 		}
 	}
-
-
-
 	return shim.Success(nil)
 }
 func (t *ManyArg) delete(stub shim.ChaincodeStubInterface, args []string) peer.Response {
