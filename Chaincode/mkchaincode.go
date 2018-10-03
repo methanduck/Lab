@@ -27,6 +27,7 @@ func (t *ManyArg) Init(stub shim.ChaincodeStubInterface) peer.Response {
 
 	//init
 	if len(args) == 2 {
+		fmt.Sprintln("FIRST IF : INIT")
 		atoi_res, err = strconv.Atoi(args[1])
 		if err != nil {
 			return shim.Error("!!!!!!!!DATA IS NOT INTEGER!!!!!!!!")
@@ -37,6 +38,7 @@ func (t *ManyArg) Init(stub shim.ChaincodeStubInterface) peer.Response {
 			return shim.Error(err.Error())
 		}
 	}else {
+		fmt.Sprintln("SECOND IF")
 		for tmp := 0; tmp == (len(args)/2 )-1; tmp ++ {
 			atoi_res, err = strconv.Atoi(args[valCount]) //value
 			if err != nil {
