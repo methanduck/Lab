@@ -21,26 +21,35 @@ func (t *ManyArg) Init(stub shim.ChaincodeStubInterface) peer.Response {
 	fmt.Println("INIT STARTING")
 	_, args := stub.GetFunctionAndParameters()
 
-	var Value []int
 	var err error
-	var count int = 0
-	var Atoi_res int = 0
+	var atoi_res int = 0
+	var entCount,valCount int =0, 1
 
 	//init
-	for tmp := 0; tmp <= len(args)/2; tmp += 2 {
-		Atoi_res, err = strconv.Atoi(args[tmp+1])
+	if len(args) == 2 {
+		atoi_res, err = strconv.Atoi(args[1])
 		if err != nil {
-			return shim.Error("!!!!!!!!Data is not integer!!!!!!!!")
-		} else {
-			count++
+			return shim.Error("!!!!!!!!DATA IS NOT INTEGER!!!!!!!!")
 		}
 
-		Value = append(Value, Atoi_res)
-		err = stub.PutState(args[tmp], []byte(strconv.Itoa(Value[count])))
+		err =stub.PutState(args[0],[]byte(strconv.Itoa(atoi_res)))
 		if err != nil {
 			return shim.Error(err.Error())
 		}
+	}else {
+		for tmp := 0; tmp == (len(args)/2 )-1; tmp ++ {
+			atoi_res, err = strconv.Atoi(args[valCount]) //value
+			if err != nil {
+				return shim.Error("!!!!!!!!Data is not integer!!!!!!!!")
+			} else {
+				err = stub.PutState(args[entCount],[]byte(strconv.Itoa(atoi_res)))//entity, value
+				if err != nil {
+					return shim.Error("PutState ERR FUNC : INIT")
+				}
+			}
+		}
 	}
+
 	return shim.Success(nil)
 }
 
