@@ -46,6 +46,8 @@ func (t *ManyArg) Init(stub shim.ChaincodeStubInterface) peer.Response {
 				if err != nil {
 					return shim.Error("PutState ERR FUNC : INIT")
 				}
+				entCount+=2;
+				valCount+=2;
 			}
 		}
 	}
