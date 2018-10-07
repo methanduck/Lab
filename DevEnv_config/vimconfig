@@ -1,0 +1,28 @@
+call plug#begin('~/.vim/plugged')
+Plug 'nightsense/stellarized'
+call plug#end()
+set background=light
+colorscheme stellarized
+set ruler
+set autoindent
+set cindent
+set nu
+set smarttab
+set hlsearch
+set smartcase
+set smartcase
+syntax on
+
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+
+
+
+" let Vundle manage Vundle
+
+" required!
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'AutoComplPop'
+call vundle#end()
