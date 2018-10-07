@@ -10,6 +10,8 @@ echo "########INSTALL : DOCKER-COMPOSE########"
 apt-get install docker-compose -y
 echo "########INSTALL : DOCKER########"
 apt-get install docker -y
+echo "########INSTALL : ZOOKEEPER########"
+apt-get install zookeeper -y
 apt-get update
 
 echo "########INSTALL : GOLANG########"
