@@ -1,4 +1,9 @@
 #! /bin/bash
+if [ "$(id -u)" -ne 0 ]
+then
+    echo "!!!!!!!!PLEASE RUN AS ROOT(sudo)!!!!!!!!"
+    exit
+else
 echo "!!Installation initiated!!"
 apt-get update
 apt-get upgrade
