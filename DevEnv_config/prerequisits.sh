@@ -27,7 +27,10 @@ CHKER=$(dpkg -l | grep golang-1.9-go)
         echo "########Go Lang Env setting init########"    
         echo -e "GOPATH (ex: /home/kwon/go) : \c"
         read path
+        echo "########exporting GOPATH########"
+        export GOPATH=$path
         echo "export GOPATH=$path" >> $HOME/.bashrc
+        export PATH=/usr/lib/go-1.9/bin:$GOPATH/bin:$PATH
         echo "export PATH=/usr/lib/go-1.9/bin:$GOPATH/bin:$PATH" >> $HOME/.bashrc
     fi
 echo "########INSTALL : PYTHON########"
