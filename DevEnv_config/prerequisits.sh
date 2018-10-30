@@ -58,4 +58,4 @@ echo "!!!!!!!!NODE.JS!!!!!!!!"
 nodejs -v
 echo "!!!!!!!!NPM!!!!!!!!"
 npm -v
-
+fi

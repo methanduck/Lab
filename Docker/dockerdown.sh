@@ -1,4 +1,5 @@
 #!/bin/bash
+#maintainer KOE
 if [ "$(id -u)" -ne 0 ]
 then
     echo "!!!!!!!!PLEASE RUN AS ROOT(sudo)!!!!!!!!"
