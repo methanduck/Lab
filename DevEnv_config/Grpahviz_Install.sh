@@ -7,4 +7,6 @@ else
     apt-get install python3 graphviz
     echo "####### INSTALLING PIP ########"
     apt-get install -y python-pip
+    echo "####### INSTALL GPROF2DOT ########"
+    pip install gprof2dot
 fi    
