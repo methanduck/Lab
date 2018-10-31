@@ -1,12 +1,25 @@
 #! /bin/bash
-if ["$(id -u)" -ne 0]
+if [ "$(id -u)" -ne 0 ]
 then 
     echo "please run as root(sudo)"
 else
-    echo "####### INSTALLING PYTHON3 AND GRAPHVIZ ########"
+    monitor="INSTALLING PERF"
+    echo_bot
+    apt-get install -y linux-tools-common
+    apt-get install -y linux-tools-4.15.0-29-generic
+    apt-get install -y linux-cloud-tools-4.15.0-29-generic
+    monitor="INSTALLING PYTHON3 AND GRAPHVIZ"
+    echo_bot
     apt-get install python3 graphviz
-    echo "####### INSTALLING PIP ########"
+    monitor="INSTALLING PIP"
+    echo_bot
     apt-get install -y python-pip
-    echo "####### INSTALL GPROF2DOT ########"
+    monitor="INSTALL GPROF2DOT"
+    echo_bot
     pip install gprof2dot
 fi    
+
+echo_bot()
+{
+    echo "######## $monitor ########"
+}
