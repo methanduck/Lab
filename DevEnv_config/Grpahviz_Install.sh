@@ -1,4 +1,9 @@
 #! /bin/bash
+echo_bot()
+{
+    echo "######## $monitor ########"
+}
+
 if [ "$(id -u)" -ne 0 ]
 then 
     echo "please run as root(sudo)"
@@ -19,7 +24,3 @@ else
     pip install gprof2dot
 fi    
 
-echo_bot()
-{
-    echo "######## $monitor ########"
-}
