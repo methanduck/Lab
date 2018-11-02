@@ -10,7 +10,7 @@ else
     while [ $count -le $2 ]  
     do
      echo $3 | sudo tee /sys/devices/system/cpu/cpu$count/online
-     echo "CPU CORE $COUNT STATUS : $(sudo cat /sys/devices/system/cpu/cpu$count/online)"
+     echo "CPU CORE $count STATUS : $(sudo cat /sys/devices/system/cpu/cpu$count/online)"
      count=$((count + 1))
      done
    else
