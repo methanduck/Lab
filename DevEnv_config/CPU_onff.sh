@@ -4,7 +4,7 @@ if [ $(id -u) -ne 0 ]
 then 
     echo "!!!!!!!!please run as root!!!!!!!!"
 else
-   if [ $# -lt 4 ] 
+   if [ $# -lt 4 -a $# -gt 1 ] 
     then
     count=$1
     while [ $count -le $2 ]  
